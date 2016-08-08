@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link href="styles1.css" rel="stylesheet" type="text/css">
+
+<script src="video.js"></script>
+
+<title>Video Player</title>
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+    
+    	<div class="player">
+        
+        	<h1>Dos Video Player</h1>
+            
+            <div class="videoLeft">
+        
+                <video id="video" height="180" width="320" onclick="togglePlayPause()"></video>
+            
+                <div class="videoControls">
+                
+                    <button id="rewind-btn" class="rewind" title="rewind" onclick="RWandFFvideo('rw', 0.5)" >R / W</button> 
+                    
+                    <button id="play-pause-btn" class="play" title="play" onclick="togglePlayPause()">&#9654;</button>
+                    
+                    <button id="stop-btn" class="stop" title="stop" onclick="stopVideo()">&#9724;</button> 
+                    
+                    <button id="fastforward-btn" class="fastforward" title="fastforward" onclick="RWandFFvideo('ff', 0.5)" >F  /  F</button> &nbsp; &nbsp;
+                    
+                    <button id="full-screen" class="full-screen" title="full screen" onclick="fullScreen()">Full Screen</button>
+                    
+                    <progress id="progress-bar" min="0" max="100" value="0">0% played</progress>
+                    
+                    <button id="mute-unmute-btn" class="mute" title="mute" onclick="toggleMute()">Mute</button>
+                    <input type="range" id="volumeSlider" onchange="changeVolume()" step="0.1" min="0" max="1" value="1">
+
+            	</div><!--closes videoControls div-->
+            
+            </div><!--closes videoLeft div-->
+                
+            <div class="videoRight">
+
+            	<a onclick="loadVideo('BigBuckBunny.mp4')">
+                	<img src="posters/BigBuckBunny.jpg" width="100" height="56"/>
+                    <h2> Big Buck Bunny</h2>
+                    Big Buck Bunny (code-named Peach) is a short computer-animated comedy film by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film Elephants Dream, the film was made using Blender.
+                	<br/><br/><br/>
+                </a>
+                
+                <a onclick="loadVideo('SilenceOfTheLambs.mp4')">
+                	<img src="posters/SilenceOfTheLambs.jpg" width="140" height="56"/>
+                    <h2> Silence of the Lambs Trailer</h2>
+                    In the film, Clarice Starling, a young U.S. FBI trainnee, seeks the advice of the imprisioned Dr. Lecter to apprehend another serial killer, known only as "Buffalo Bill".
+                	<br/><br/><br/>
+                </a>
+                
+                <a onclick="loadVideo('Predator.mp4')">
+                	<img src="posters/Predator.jpg" width="75" height="56"/>
+                    <h2> Predator Trailer</h2>
+                    Dutch (Arnold Schwarzenegger) and his elite commando team arrive in an unnamed Central American country. They mmet a general Phillips, whom Dutch has worked for in the past.
+                	<br/><br/><br/>
+                </a>
+                
+            </div><!--closes videoRight div-->
+            
+        </div><!--closes player div-->
+        
+    </div><!--closes wrapper div-->
+
+</body>
+</html>
