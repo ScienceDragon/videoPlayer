@@ -7,10 +7,13 @@ document.addEventListener("DOMContentLoaded", function()
 }, false);
 
 var videoPlayer;
+var bar;
 
 /*sets the videoPlayer variable to the video ID in the page*/
 function startVideoPlayer() {
 	videoPlayer = document.getElementById("video");
+	
+loadVideo("BigBuckBunny.mp4");	
 	
 /*runs the updateProgressBar method every millisecond once the videoPlayer is started*/
 	videoPlayer.addEventListener("initializeProgressBar", updateProgressBar, false);
@@ -89,6 +92,10 @@ function loadVideo(video) {
 	videoPlayer.src = "footage/" + video;
 	videoPlayer.load();
 	
+	/*changes the pause back to play when new video is clicked*/
+	var button = document.getElementById("play-pause-btn");
+	changeButton(button,"&#9654;");
+	
 	/*splits the fileName and the file tag with '.'  .split creates an array*/
 	var fileName = video.split('.');
 	
@@ -104,9 +111,10 @@ function RWandFFvideo(dir, amt) {
 	'Grays out' btn when it reaches its maximum feature*/
 	(pbr == 0.5) ? pbr_lower_btn.disabled = true : pbr_lower_btn.disabled = false;
 	
-	if (dir === "rw") {
+	if (dir == "rw") {
 		videoPlayer.playbackRate -= amt;
-	} else if (dir === "ff") {
+	} else if (dir == "ff") {
 		videoPlayer.playback += amt;
-	}
+}
+
 }
